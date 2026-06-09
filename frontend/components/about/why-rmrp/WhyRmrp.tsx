@@ -1,6 +1,7 @@
 'use client';
 
-import { m } from 'framer-motion';
+import { m, type Variants } from 'framer-motion';
+import type { WhyRmrpItem } from './types';
 import { sectionBadge, sectionHeading, whyRmrpItems } from './data';
 
 const container = {
@@ -13,7 +14,7 @@ const container = {
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } },
 };
 
 const cardReveal = {
@@ -21,7 +22,7 @@ const cardReveal = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: 0.25 + i * 0.07, duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+    transition: { delay: 0.25 + i * 0.07, duration: 0.5, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
   }),
 };
 

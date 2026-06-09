@@ -2,6 +2,8 @@ import type { MetadataRoute } from 'next';
 import { siteConfig } from '@/lib/seo';
 import { getAllSlugs } from '@/lib/products-data';
 
+export const dynamic = 'force-static';
+
 type ChangeFreq = 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
 
 type SitemapEntry = {

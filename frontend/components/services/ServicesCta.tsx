@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { m } from 'framer-motion';
+import { m, type Variants } from 'framer-motion';
 
 export default function ServicesCta() {
   return (
@@ -13,7 +13,7 @@ export default function ServicesCta() {
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
         className="relative mx-auto max-w-3xl px-5 lg:px-8 text-center"
       >
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">

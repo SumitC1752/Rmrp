@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { m } from 'framer-motion';
+import { m, type Variants } from 'framer-motion';
 
 const container = {
   hidden: { opacity: 0 },
@@ -10,7 +10,7 @@ const container = {
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } },
 };
 
 const sections = [
@@ -210,7 +210,7 @@ export default function PrivacyContent() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
               >
                 <h2 className="text-xl sm:text-2xl font-bold text-navy-900 mb-4 lg:mb-5">
                   {section.title}
@@ -264,7 +264,7 @@ export default function PrivacyContent() {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
             className="mt-14 pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4"
           >
             <p className="text-xs text-gray-400">

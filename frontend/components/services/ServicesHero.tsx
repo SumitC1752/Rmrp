@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { m } from 'framer-motion';
+import { m, type Variants } from 'framer-motion';
 import { IMAGES } from '@/constants';
 
 const container = {
@@ -12,7 +12,7 @@ const container = {
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } },
 };
 
 export default function ServicesHero() {
@@ -77,7 +77,7 @@ export default function ServicesHero() {
           <m.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] as const }}
+            transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
             className="relative aspect-[4/3] rounded-2xl overflow-hidden"
           >
             <Image src={IMAGES.exportLogistics} alt="Export Logistics — Container Shipping & Global Freight" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" priority />

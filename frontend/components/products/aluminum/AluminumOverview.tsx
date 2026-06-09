@@ -1,12 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import { m } from 'framer-motion';
+import { m, type Variants } from 'framer-motion';
 import { IMAGES } from '@/constants';
 import { pageContent } from './data';
 
 const container = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.15 } } };
-const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } };
+const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } } };
 
 export default function AluminumOverview() {
   const { badge, heading, paragraphs, highlights } = pageContent.overview;
@@ -14,7 +14,7 @@ export default function AluminumOverview() {
     <section className="bg-white py-20 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <m.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}>
+          <m.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}>
             <div className="relative w-full h-full min-h-[400px] lg:min-h-[500px] bg-navy-900 rounded-2xl overflow-hidden">
               <Image src={IMAGES.aluminumIngots} alt="Aluminum Ingots" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" priority />
             </div>

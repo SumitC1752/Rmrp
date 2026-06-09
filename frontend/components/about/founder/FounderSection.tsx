@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { m } from 'framer-motion';
+import { m, type Variants } from 'framer-motion';
 import { IMAGES } from '@/constants';
 import { founderContent } from './data';
 
@@ -12,7 +12,7 @@ const container = {
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } },
 };
 
 const metricReveal = {
@@ -20,7 +20,7 @@ const metricReveal = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: 0.5 + i * 0.12, duration: 0.5, ease: [0.16, 1, 0.3, 1] as const },
+    transition: { delay: 0.5 + i * 0.12, duration: 0.5, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
   }),
 };
 
@@ -60,7 +60,7 @@ export default function FounderSection() {
             initial={{ opacity: 0, x: -32 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
             className="flex justify-center lg:justify-start"
           >
             <div className="relative w-72 h-[360px] sm:w-80 sm:h-[400px] lg:w-96 lg:h-[480px] shrink-0">
@@ -161,7 +161,7 @@ export default function FounderSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           className="relative bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 rounded-2xl px-8 py-10 lg:px-14 lg:py-12 overflow-hidden"
         >
           {/* Decorative grid */}

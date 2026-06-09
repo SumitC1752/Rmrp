@@ -1,11 +1,11 @@
 'use client';
 
 import Image from 'next/image';
-import { m } from 'framer-motion';
+import { m, type Variants } from 'framer-motion';
 import type { ProductData } from '@/lib/products-data';
 
 const container = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.15 } } };
-const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const } } };
+const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } } };
 
 export default function ProductOverview({ product }: { product: ProductData }) {
   return (
@@ -16,7 +16,7 @@ export default function ProductOverview({ product }: { product: ProductData }) {
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           >
             <div className="relative w-full h-full min-h-[400px] lg:min-h-[500px] bg-navy-900 rounded-2xl overflow-hidden">
               <Image src={product.image} alt={product.name} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" priority />

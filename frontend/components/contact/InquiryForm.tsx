@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, type FormEvent } from 'react';
-import { m } from 'framer-motion';
+import { m, type Variants } from 'framer-motion';
 
 interface FormData {
   name: string;
@@ -13,7 +13,7 @@ interface FormData {
 }
 
 const container = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.15 } } };
-const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const } } };
+const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } } };
 
 export default function InquiryForm() {
   const [form, setForm] = useState<FormData>({ name: '', email: '', phone: '', company: '', product: '', message: '' });
@@ -87,7 +87,7 @@ export default function InquiryForm() {
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
             className="lg:col-span-3 bg-white rounded-2xl border border-gray-100 p-8 lg:p-10 shadow-sm"
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">

@@ -1,10 +1,10 @@
 'use client';
 
-import { m } from 'framer-motion';
+import { m, type Variants } from 'framer-motion';
 import { useMemo } from 'react';
 
 const container = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.15 } } };
-const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const } } };
+const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } } };
 
 const stats = [
   { label: 'Countries Served', value: 25 },
@@ -43,7 +43,7 @@ export default function ExportNetwork() {
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
             className="grid grid-cols-2 gap-4"
           >
             {stats.map((stat) => (

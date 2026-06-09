@@ -13,7 +13,7 @@ const mobileItemVariants = {
   visible: (i: number) => ({
     opacity: 1,
     x: 0,
-    transition: { delay: 0.1 + i * 0.05, duration: 0.3, ease: 'easeOut' },
+    transition: { delay: 0.1 + i * 0.05, duration: 0.3, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
   }),
 };
 
@@ -106,7 +106,7 @@ export default function MobileNav({ open, onClose }: MobileNavProps) {
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
-            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
             className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-white z-50 lg:hidden overflow-y-auto"
             role="dialog"
             aria-modal="true"

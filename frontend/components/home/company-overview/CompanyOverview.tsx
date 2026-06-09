@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { m } from 'framer-motion';
+import { m, type Variants } from 'framer-motion';
 import { IMAGES } from '@/constants';
 import { companyContent } from './data';
 
@@ -16,7 +16,7 @@ const container = {
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } },
 };
 
 const cardFade = {
@@ -24,7 +24,7 @@ const cardFade = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: 0.4 + i * 0.1, duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+    transition: { delay: 0.4 + i * 0.1, duration: 0.5, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
   }),
 };
 
@@ -48,7 +48,7 @@ export default function CompanyOverview() {
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           >
             <VisualPanel />
           </m.div>

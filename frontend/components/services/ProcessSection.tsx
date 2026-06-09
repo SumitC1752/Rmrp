@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { m } from 'framer-motion';
+import { m, type Variants } from 'framer-motion';
 
-const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const } } };
+const fadeUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } } };
 
 const steps = [
   {
@@ -104,7 +104,7 @@ function TimelineStep({ step, index }: { step: (typeof steps)[0]; index: number 
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] as const }}
+      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
       className={`group relative flex items-start gap-6 lg:gap-8 ${isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
     >
       <div className={`hidden lg:block w-[calc(50%-28px)] ${isLeft ? 'text-right' : 'text-left'}`}>
@@ -184,7 +184,7 @@ export default function ProcessSection() {
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
+          transition={{ duration: 0.6, delay: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           className="mt-16 lg:mt-20 text-center"
         >
           <Link

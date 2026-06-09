@@ -1,6 +1,6 @@
 'use client';
 
-import { m } from 'framer-motion';
+import { m, type Variants } from 'framer-motion';
 
 export default function QuoteCta() {
   return (
@@ -10,7 +10,7 @@ export default function QuoteCta() {
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 px-8 py-12 lg:px-14 lg:py-16"
         >
           <div className="absolute inset-0 opacity-[0.03]">

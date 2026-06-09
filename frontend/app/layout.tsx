@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from 'next';
-import { Poppins, Inter } from 'next/font/google';
 import './globals.css';
 import dynamic from 'next/dynamic';
 import { Navbar } from '@/components/layout/navbar';
@@ -8,20 +7,6 @@ import Providers from '@/providers';
 
 import FloatingSocialBar from '@/components/social/FloatingSocialBar';
 import { siteConfig, orgSchema } from '@/lib/seo';
-
-const poppins = Poppins({
-  variable: '--font-heading',
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  display: 'swap',
-});
-
-const inter = Inter({
-  variable: '--font-body',
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  display: 'swap',
-});
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -74,7 +59,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${poppins.variable} ${inter.variable}`}
+      className=""
       suppressHydrationWarning
     >
       <head>

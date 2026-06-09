@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { m } from 'framer-motion';
+import { m, type Variants } from 'framer-motion';
 import { reachContent } from './data';
 
 const container = {
@@ -14,7 +14,7 @@ const container = {
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } },
 };
 
 const statItem = {
@@ -22,7 +22,7 @@ const statItem = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: 0.5 + i * 0.1, duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+    transition: { delay: 0.5 + i * 0.1, duration: 0.5, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
   }),
 };
 
@@ -306,7 +306,7 @@ export default function GlobalReach() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           >
             <WorldMap />
           </m.div>

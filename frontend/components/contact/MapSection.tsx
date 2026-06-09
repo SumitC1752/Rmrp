@@ -1,6 +1,6 @@
 'use client';
 
-import { m } from 'framer-motion';
+import { m, type Variants } from 'framer-motion';
 
 export default function MapSection() {
   return (
@@ -10,7 +10,7 @@ export default function MapSection() {
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           className="text-center max-w-2xl mx-auto mb-14 lg:mb-18"
         >
           <span className="inline-block text-xs font-semibold tracking-widest uppercase text-gold-600 mb-4">Our Location</span>
@@ -23,7 +23,7 @@ export default function MapSection() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           className="relative w-full h-[400px] lg:h-[480px] bg-navy-900 rounded-2xl overflow-hidden"
         >
           {/* Map placeholder with grid pattern */}
