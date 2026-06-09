@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#0B1F3A"/>
+  <rect x="60" y="60" width="1080" height="510" rx="16" fill="#0F2A4F"/>
+  <circle cx="1060" cy="120" r="200" fill="#D4AF37" fill-opacity="0.05"/>
+  <circle cx="140" cy="520" r="150" fill="#D4AF37" fill-opacity="0.04"/>
+  <circle cx="600" cy="315" r="140" fill="none" stroke="#D4AF37" stroke-opacity="0.15" stroke-width="1"/>
+  <circle cx="600" cy="315" r="100" fill="none" stroke="#D4AF37" stroke-opacity="0.1" stroke-width="1"/>
+  <circle cx="600" cy="315" r="60" fill="none" stroke="#D4AF37" stroke-opacity="0.15" stroke-width="1"/>
+  <line x1="600" y1="175" x2="600" y2="455" stroke="#D4AF37" stroke-opacity="0.1" stroke-width="1"/>
+  <line x1="460" y1="315" x2="740" y2="315" stroke="#D4AF37" stroke-opacity="0.1" stroke-width="1"/>
+  <text x="600" y="210" text-anchor="middle" font-family="Poppins, sans-serif" font-size="18" font-weight="600" fill="#D4AF37" letter-spacing="5">RMRP GLOBAL TRADE</text>
+  <text x="600" y="280" text-anchor="middle" font-family="Inter, sans-serif" font-size="42" font-weight="700" fill="#FFFFFF">Your Trusted Export Partner</text>
+  <text x="600" y="340" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="400" fill="#C8CDD4">Aluminum Ingots • Aluminum Scrap • Jaggery</text>
+  <text x="600" y="375" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="400" fill="#C8CDD4">Onion Powder • Garlic Powder • Agro Commodities</text>
+  <line x1="450" y1="415" x2="750" y2="415" stroke="#D4AF37" stroke-width="3"/>
+  <text x="600" y="460" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" font-weight="400" fill="#9EA4AE">Premium B2B Exporter • ISO Certified • Serving 25+ Countries</text>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#0B1F3A"/>
+  <rect x="60" y="60" width="1080" height="510" rx="16" fill="#0F2A4F"/>
+  <path d="M200 400 L600 200 L1000 400" stroke="#D4AF37" stroke-opacity="0.08" stroke-width="2" fill="none"/>
+  <path d="M250 350 L600 220 L950 350" stroke="#D4AF37" stroke-opacity="0.06" stroke-width="1.5" fill="none"/>
+  <circle cx="600" cy="230" r="12" fill="#D4AF37" fill-opacity="0.3"/>
+  <circle cx="250" cy="350" r="8" fill="#D4AF37" fill-opacity="0.15"/>
+  <circle cx="950" cy="350" r="8" fill="#D4AF37" fill-opacity="0.15"/>
+  <circle cx="200" cy="400" r="6" fill="#D4AF37" fill-opacity="0.1"/>
+  <circle cx="1000" cy="400" r="6" fill="#D4AF37" fill-opacity="0.1"/>
+  <rect x="540" y="380" width="120" height="50" rx="6" fill="#D4AF37" fill-opacity="0.1"/>
+  <text x="600" y="412" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#D4AF37">END-TO-END LOGISTICS</text>
+  <text x="600" y="120" text-anchor="middle" font-family="Poppins, sans-serif" font-size="18" font-weight="600" fill="#D4AF37" letter-spacing="5">RMRP GLOBAL TRADE</text>
+  <text x="600" y="175" text-anchor="middle" font-family="Inter, sans-serif" font-size="40" font-weight="700" fill="#FFFFFF">Export Services</text>
+  <text x="600" y="500" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" font-weight="400" fill="#9EA4AE">Bulk Supply • OEM Manufacturing • Documentation • Global Logistics</text>
+</svg>

@@ -1,0 +1,16 @@
+{
+  "name": "RMRP Global Trade",
+  "short_name": "RMRP Trade",
+  "description": "Premium Aluminum & Agro Commodities Exporter — Trusted B2B partner serving 25+ countries worldwide.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1F3A",
+  "theme_color": "#0B1F3A",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

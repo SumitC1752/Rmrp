@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#0B1F3A"/>
+  <rect x="60" y="60" width="1080" height="510" rx="16" fill="#0F2A4F"/>
+  <circle cx="350" cy="300" r="90" fill="none" stroke="#D4AF37" stroke-opacity="0.12" stroke-width="2"/>
+  <circle cx="350" cy="270" r="30" fill="#D4AF37" fill-opacity="0.1"/>
+  <ellipse cx="350" cy="350" rx="45" ry="25" fill="#D4AF37" fill-opacity="0.06"/>
+  <text x="600" y="130" text-anchor="middle" font-family="Poppins, sans-serif" font-size="18" font-weight="600" fill="#D4AF37" letter-spacing="5">RMRP GLOBAL TRADE</text>
+  <text x="600" y="175" text-anchor="middle" font-family="Inter, sans-serif" font-size="40" font-weight="700" fill="#FFFFFF">About Us</text>
+  <text x="490" y="240" font-family="Inter, sans-serif" font-size="20" font-weight="400" fill="#C8CDD4">Trusted Manufacturer, Trader &amp; Exporter</text>
+  <text x="490" y="275" font-family="Inter, sans-serif" font-size="20" font-weight="400" fill="#C8CDD4">of Premium Industrial &amp; Food Commodities</text>
+  <line x1="490" y1="310" x2="780" y2="310" stroke="#D4AF37" stroke-width="2.5"/>
+  <text x="490" y="350" font-family="Inter, sans-serif" font-size="17" font-weight="400" fill="#9EA4AE">15+ Years of Export Expertise</text>
+  <text x="490" y="380" font-family="Inter, sans-serif" font-size="17" font-weight="400" fill="#9EA4AE">ISO Certified • Serving 25+ Countries</text>
+</svg>
