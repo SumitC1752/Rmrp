@@ -16,7 +16,7 @@ const fadeUp = {
 
 export default function ProductHero({ product }: { product: ProductData }) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-navy-900 via-navy-800 to-navy-900 py-16 sm:py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-gradient-to-b from-navy-900 via-navy-800 to-navy-900 py-12 sm:py-16 lg:py-28">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(212,175,55,0.03)_0%,_transparent_60%)]" />
       <m.div
         variants={container}
@@ -41,8 +41,8 @@ export default function ProductHero({ product }: { product: ProductData }) {
             </span>
           ))}
         </m.nav>
-        <m.h1 variants={fadeUp} className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-3xl">{product.name}</m.h1>
-        <m.p variants={fadeUp} className="mt-5 text-lg sm:text-xl text-gray-300/80 leading-relaxed max-w-2xl">{product.heroSubheading}</m.p>
+        <m.h1 variants={fadeUp} className="text-[clamp(1.75rem,6vw,2.5rem)] sm:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-3xl">{product.name}</m.h1>
+        <m.p variants={fadeUp} className="mt-5 text-[15px] sm:text-lg lg:text-xl text-gray-300/80 leading-relaxed max-w-2xl">{product.heroSubheading}</m.p>
       </m.div>
     </section>
   );

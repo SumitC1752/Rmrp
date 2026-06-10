@@ -756,5 +756,5 @@ export function getRelatedProducts(slug: string, count = 4): ProductData[] {
 }
 
 export function getAllSlugs(): string[] {
-  return products.map((p) => p.slug);
+  return products.map((p) => p.slug).filter((slug) => slug !== 'aluminum-scrap');
 }

@@ -5,7 +5,7 @@ import { m, type Variants } from 'framer-motion';
 
 export default function QualityCta() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 py-20 sm:py-24 lg:py-28">
+    <section className="relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 py-16 sm:py-20 lg:py-28">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,175,55,0.04)_0%,_transparent_60%)]" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-gold-500/30 to-transparent" />
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-t from-gold-500/30 to-transparent" />
@@ -16,16 +16,16 @@ export default function QualityCta() {
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
         className="relative mx-auto max-w-3xl px-5 lg:px-8 text-center"
       >
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+        <h2 className="text-[clamp(1.5rem,5.5vw,2.25rem)] sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
           Experience the RMRP Quality Difference
         </h2>
-        <p className="mt-5 text-lg text-gray-300/80 leading-relaxed max-w-xl mx-auto">
+        <p className="mt-5 text-[15px] sm:text-lg text-gray-300/80 leading-relaxed max-w-xl mx-auto">
           Discuss your quality requirements with our team. We will share our category-specific quality plan and show you how we ensure consistency across every shipment.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-wide uppercase rounded-lg bg-gold-500 text-navy-900 hover:bg-gold-400 transition-all duration-200 shadow-gold-sm hover:shadow-gold-lg"
+            className="group inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-wide uppercase rounded-lg bg-gold-500 text-navy-900 hover:bg-gold-400 transition-all duration-200 shadow-gold-sm hover:shadow-gold-lg w-full sm:w-auto"
           >
             Discuss Your Requirements
             <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -34,7 +34,7 @@ export default function QualityCta() {
           </Link>
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-wide uppercase rounded-lg border border-white/20 text-white hover:bg-white/5 hover:border-white/30 transition-all duration-200"
+            className="group inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-wide uppercase rounded-lg border border-white/20 text-white hover:bg-white/5 hover:border-white/30 transition-all duration-200 w-full sm:w-auto"
           >
             Request Our Quality Policy
             <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
-  <rect width="800" height="600" fill="#0B1F3A"/>
-  <rect x="30" y="30" width="740" height="540" rx="6" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.12"/>
-  <text x="400" y="285" text-anchor="middle" font-family="Poppins,sans-serif" font-size="24" font-weight="600" fill="#D4AF37" opacity="0.5">about-story</text>
-  <text x="400" y="320" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" fill="#FFFFFF" opacity="0.3">800 × 600</text>
-  <text x="400" y="348" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#D4AF37" opacity="0.2">public/images/about-story.jpg</text>
-</svg>

@@ -9,6 +9,7 @@ export interface MegaMenuItem {
   href: string;
   description: string;
   image?: string;
+  children?: MegaMenuItem[];
 }
 
 export interface MegaMenuSection {

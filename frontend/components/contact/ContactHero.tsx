@@ -15,7 +15,7 @@ const fadeUp = {
 
 export default function ContactHero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-navy-900 via-navy-800 to-navy-900 py-16 sm:py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-gradient-to-b from-navy-900 via-navy-800 to-navy-900 py-12 sm:py-16 lg:py-28">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(212,175,55,0.03)_0%,_transparent_60%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(212,175,55,0.02)_0%,_transparent_50%)]" />
       <m.div
@@ -39,10 +39,10 @@ export default function ContactHero() {
             </span>
           ))}
         </m.nav>
-        <m.h1 variants={fadeUp} className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-3xl">
+        <m.h1 variants={fadeUp} className="text-[clamp(1.75rem,6vw,2.5rem)] sm:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-3xl">
           Get in Touch
         </m.h1>
-        <m.p variants={fadeUp} className="mt-5 text-lg sm:text-xl text-gray-300/80 leading-relaxed max-w-2xl">
+        <m.p variants={fadeUp} className="mt-5 text-[15px] sm:text-lg lg:text-xl text-gray-300/80 leading-relaxed max-w-2xl">
           Ready to discuss your supply requirements? Our trade desk responds within 24 hours with pricing, specifications, and logistics options tailored to your needs.
         </m.p>
       </m.div>

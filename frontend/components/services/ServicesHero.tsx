@@ -17,7 +17,7 @@ const fadeUp = {
 
 export default function ServicesHero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-navy-900 via-navy-800 to-navy-900 py-16 sm:py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-gradient-to-b from-navy-900 via-navy-800 to-navy-900 py-12 sm:py-16 lg:py-28">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(212,175,55,0.03)_0%,_transparent_60%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(212,175,55,0.02)_0%,_transparent_50%)]" />
       <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(circle at 25% 50%, rgba(212,175,55,1) 0.5px, transparent 0.5px)', backgroundSize: '40px 40px' }} />
@@ -46,16 +46,16 @@ export default function ServicesHero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div>
             <m.span variants={fadeUp} className="inline-block text-xs font-semibold tracking-widest uppercase text-gold-400 mb-4">Export Services</m.span>
-            <m.h1 variants={fadeUp} className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+            <m.h1 variants={fadeUp} className="text-[clamp(1.75rem,6vw,2.5rem)] sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
               Full-Service Export Solutions for Global Buyers
             </m.h1>
-            <m.p variants={fadeUp} className="mt-5 text-lg sm:text-xl text-gray-300/80 leading-relaxed">
+            <m.p variants={fadeUp} className="mt-5 text-[15px] sm:text-lg lg:text-xl text-gray-300/80 leading-relaxed">
               From your first inquiry to final delivery — we manage every stage of the export process: logistics, documentation, incoterms, and payment. One partner, complete accountability.
             </m.p>
-            <m.div variants={fadeUp} className="mt-8 flex flex-wrap gap-3">
+            <m.div variants={fadeUp} className="mt-8 flex flex-col sm:flex-row gap-3">
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold tracking-wide uppercase rounded-lg bg-gold-500 text-navy-900 hover:bg-gold-400 transition-all duration-200 shadow-gold-sm hover:shadow-gold-lg"
+                className="group inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold tracking-wide uppercase rounded-lg bg-gold-500 text-navy-900 hover:bg-gold-400 transition-all duration-200 shadow-gold-sm hover:shadow-gold-lg w-full sm:w-auto"
               >
                 Request a Quote
                 <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -64,7 +64,7 @@ export default function ServicesHero() {
               </Link>
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold tracking-wide uppercase rounded-lg border border-white/20 text-white hover:bg-white/5 hover:border-white/30 transition-all duration-200"
+                className="group inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold tracking-wide uppercase rounded-lg border border-white/20 text-white hover:bg-white/5 hover:border-white/30 transition-all duration-200 w-full sm:w-auto"
               >
                 Speak to Our Team
                 <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -84,7 +84,7 @@ export default function ServicesHero() {
           </m.div>
         </div>
 
-        <m.div variants={fadeUp} className="mt-12 lg:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-6">
+        <m.div variants={fadeUp} className="mt-12 lg:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-6 px-2 sm:px-0">
           {[
             { label: 'Export Process', desc: 'Streamlined 8-step journey' },
             { label: 'Logistics', desc: 'Sea, air & door-to-door' },

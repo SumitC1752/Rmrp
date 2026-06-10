@@ -53,7 +53,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative h-screen max-h-screen overflow-hidden bg-[#07172B] flex flex-col"
+      className="relative min-h-[100dvh] lg:min-h-screen overflow-hidden bg-[#07172B] flex flex-col"
       aria-label="Hero"
     >
       {/* ── Background ── */}
@@ -67,13 +67,13 @@ export default function Hero() {
       </div>
 
       {/* ── Content wrapper — fills height, navbar offset via pt ── */}
-      <div className="relative z-10 flex-1 flex flex-col mx-auto w-full max-w-7xl px-6 lg:px-10 pt-[72px] pb-3 overflow-hidden">
+      <div className="relative z-10 flex-1 flex flex-col mx-auto w-full max-w-7xl px-5 lg:px-10 pt-2 sm:pt-4 lg:pt-[72px] pb-2 lg:pb-3 overflow-hidden">
 
         {/* ── Main grid — takes all remaining space ── */}
-        <div className="flex-1 grid lg:grid-cols-[1fr_1.15fr] items-center gap-0 min-h-0 pt-3 pb-2">
+        <div className="flex-1 grid lg:grid-cols-[1fr_1.15fr] items-center gap-0 min-h-0 pt-0 lg:pt-3 pb-1 lg:pb-2">
 
           {/* ══ LEFT ══ */}
-          <div className="flex flex-col gap-4 lg:pr-8 xl:pr-12">
+          <div className="flex flex-col gap-2 lg:gap-4 lg:pr-8 xl:pr-12">
 
             {/* Badge */}
             <m.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
@@ -98,8 +98,8 @@ export default function Hero() {
                 <m.h1 key={text}
                   initial={{ opacity: 0, x: -28 }} animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.7, delay, ease }}
-                  className={`block font-black leading-[1.08] tracking-tight whitespace-nowrap
-                    text-[2rem] sm:text-[2.5rem] lg:text-[2.9rem] xl:text-[3.3rem]
+                  className={`block font-black leading-[1.08] tracking-tight
+                    text-[clamp(1.6rem,7.5vw,2rem)] sm:text-[clamp(2rem,5vw,2.5rem)] lg:text-[2.9rem] xl:text-[3.3rem]
                     ${gold ? 'text-[#D4AF37]' : 'text-white'}`}
                 >
                   {text}
@@ -110,7 +110,7 @@ export default function Hero() {
             {/* Body */}
             <m.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.65 }}
-              className="text-[13px] sm:text-[14px] text-white/38 leading-[1.7] max-w-[380px]">
+              className="text-[13px] sm:text-[14px] text-white/38 leading-[1.7] max-w-md lg:max-w-[380px]">
               RMRP Global Trade supplies Aluminum Ingots, Aluminum Scrap, Processed Food
               Products and Agro Commodities to importers and industrial buyers across 25+ countries.
             </m.p>
@@ -118,16 +118,16 @@ export default function Hero() {
             {/* CTA */}
             <m.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="flex items-center gap-3">
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
               <Link href="/contact"
-                className="group inline-flex items-center gap-2 rounded-lg bg-[#D4AF37] px-6 py-2.5 text-[12px] font-bold uppercase tracking-[0.1em] text-[#07172B] transition-all duration-200 shadow-[0_4px_20px_rgba(212,175,55,0.32)] hover:bg-[#e2c24a] hover:shadow-[0_6px_28px_rgba(212,175,55,0.48)]">
+                className="group inline-flex items-center justify-center gap-2 rounded-lg bg-[#D4AF37] px-6 py-3 sm:py-2.5 text-[12px] font-bold uppercase tracking-[0.1em] text-[#07172B] transition-all duration-200 shadow-[0_4px_20px_rgba(212,175,55,0.32)] hover:bg-[#e2c24a] hover:shadow-[0_6px_28px_rgba(212,175,55,0.48)]">
                 Request Quote
                 <svg className="w-3 h-3 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Link>
               <Link href="/products"
-                className="group inline-flex items-center gap-2 rounded-lg border border-white/14 px-6 py-2.5 text-[12px] font-medium uppercase tracking-[0.1em] text-white/50 transition-all duration-200 hover:border-white/30 hover:text-white/80 hover:bg-white/[0.04]">
+                className="group inline-flex items-center justify-center gap-2 rounded-lg border border-white/14 px-6 py-3 sm:py-2.5 text-[12px] font-medium uppercase tracking-[0.1em] text-white/50 transition-all duration-200 hover:border-white/30 hover:text-white/80 hover:bg-white/[0.04]">
                 Our Products
                 <svg className="w-3 h-3 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -138,16 +138,16 @@ export default function Hero() {
             {/* Stats */}
             <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.95 }}
-              className="grid grid-cols-4 gap-3 pt-3 border-t border-white/[0.07]">
+              className="grid grid-cols-3 sm:grid-cols-4 gap-1.5 sm:gap-3 pt-2 sm:pt-3 border-t border-white/[0.07]">
               {STATS.map(({ value, label }, i) => (
                 <m.div key={label}
                   initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.95 + i * 0.07, duration: 0.4 }}
                   className="flex flex-col gap-0.5">
-                  <span className="text-[1.5rem] lg:text-[1.75rem] font-black text-[#D4AF37] leading-none tabular-nums">
+                  <span className="text-[1.25rem] sm:text-[1.5rem] lg:text-[1.75rem] font-black text-[#D4AF37] leading-none tabular-nums">
                     {value}
                   </span>
-                  <span className="text-[8.5px] text-white/28 uppercase tracking-[0.1em] font-medium leading-tight">
+                  <span className="text-[7px] sm:text-[8.5px] text-white/28 uppercase tracking-[0.1em] font-medium leading-tight">
                     {label}
                   </span>
                 </m.div>
@@ -157,15 +157,15 @@ export default function Hero() {
             {/* Trust bar — inside left column, no gap */}
             <m.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 1.3 }}>
-              <div className="inline-flex items-center gap-2 rounded-2xl border border-white/[0.065] bg-white/[0.018] backdrop-blur-xl px-4 py-2">
-                <span className="text-[8px] text-white/20 uppercase tracking-[0.2em] font-semibold mr-1">Certified</span>
-                <span className="w-px h-3.5 bg-white/10" />
+              <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 rounded-2xl border border-white/[0.065] bg-white/[0.018] backdrop-blur-xl px-3 sm:px-4 py-1.5 sm:py-2">
+                <span className="text-[7px] sm:text-[8px] text-white/20 uppercase tracking-[0.2em] font-semibold">Certified</span>
+                <span className="w-px h-3 bg-white/10" />
                 {CERTS.map((item) => (
-                  <span key={item} className="inline-flex items-center gap-1.5 rounded-lg bg-white/[0.035] border border-white/[0.05] px-2.5 py-1">
-                    <svg className="w-2 h-2 shrink-0" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="3">
+                  <span key={item} className="inline-flex items-center gap-1 rounded-lg bg-white/[0.035] border border-white/[0.05] px-2 sm:px-2.5 py-0.5 sm:py-1">
+                    <svg className="w-1.5 h-1.5 sm:w-2 sm:h-2 shrink-0" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="3">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-[8.5px] font-semibold text-white/38 uppercase tracking-wider">{item}</span>
+                    <span className="text-[7px] sm:text-[8.5px] font-semibold text-white/38 uppercase tracking-wider whitespace-nowrap">{item}</span>
                   </span>
                 ))}
               </div>

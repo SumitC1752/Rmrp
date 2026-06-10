@@ -19,7 +19,7 @@ const fadeUp: Variants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.16, 1, 0.3, 1] as [number, number, number, number] as [number, number, number, number],
+      ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
     },
   },
 };
@@ -28,7 +28,7 @@ export default function AboutCta() {
   const { headline, description, primaryCta, secondaryCta } = aboutCtaContent;
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 py-20 sm:py-24 lg:py-28">
+    <section className="relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 py-16 sm:py-20 lg:py-28">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,175,55,0.04)_0%,_transparent_60%)]" />
 
       {/* Top gold line */}
@@ -57,7 +57,7 @@ export default function AboutCta() {
         >
           <m.h2
             variants={fadeUp}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight"
+            className="text-[clamp(1.5rem,5.5vw,2.25rem)] sm:text-4xl lg:text-5xl font-bold text-white leading-tight"
           >
             {headline}
           </m.h2>
@@ -75,7 +75,7 @@ export default function AboutCta() {
           >
             <Link
               href={primaryCta.href}
-              className="group inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-wide uppercase rounded-lg bg-gold-500 text-navy-900 hover:bg-gold-400 transition-all duration-200 shadow-gold-sm hover:shadow-gold-lg"
+              className="group inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-wide uppercase rounded-lg bg-gold-500 text-navy-900 hover:bg-gold-400 transition-all duration-200 shadow-gold-sm hover:shadow-gold-lg w-full sm:w-auto"
             >
               {primaryCta.label}
               <svg
@@ -90,7 +90,7 @@ export default function AboutCta() {
             </Link>
             <Link
               href={secondaryCta.href}
-              className="group inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-wide uppercase rounded-lg border border-white/20 text-white hover:bg-white/5 hover:border-white/30 transition-all duration-200"
+              className="group inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-wide uppercase rounded-lg border border-white/20 text-white hover:bg-white/5 hover:border-white/30 transition-all duration-200 w-full sm:w-auto"
             >
               {secondaryCta.label}
               <svg

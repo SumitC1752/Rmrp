@@ -21,7 +21,7 @@ export default function CtaSection() {
   const { headline, description, primaryCta, secondaryCta } = ctaContent;
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 py-20 sm:py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 py-16 sm:py-20 lg:py-32">
       {/* Background decorative elements */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,175,55,0.04)_0%,_transparent_60%)]" />
 
@@ -53,7 +53,7 @@ export default function CtaSection() {
           {/* Headline */}
           <m.h2
             variants={fadeUp}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight"
+            className="text-[clamp(1.5rem,5.5vw,2.25rem)] sm:text-4xl lg:text-5xl font-bold text-white leading-tight"
           >
             {headline}
           </m.h2>
@@ -61,7 +61,7 @@ export default function CtaSection() {
           {/* Description */}
           <m.p
             variants={fadeUp}
-            className="mt-5 text-lg text-gray-300/80 leading-relaxed max-w-xl mx-auto"
+            className="mt-5 text-[15px] sm:text-lg text-gray-300/80 leading-relaxed max-w-xl mx-auto"
           >
             {description}
           </m.p>
@@ -73,7 +73,7 @@ export default function CtaSection() {
           >
             <Link
               href={primaryCta.href}
-              className="group inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-wide uppercase rounded-lg bg-gold-500 text-navy-900 hover:bg-gold-400 transition-all duration-200 shadow-gold-sm hover:shadow-gold-lg"
+              className="group inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-wide uppercase rounded-lg bg-gold-500 text-navy-900 hover:bg-gold-400 transition-all duration-200 shadow-gold-sm hover:shadow-gold-lg w-full sm:w-auto"
             >
               {primaryCta.label}
               <svg
@@ -88,7 +88,7 @@ export default function CtaSection() {
             </Link>
             <Link
               href={secondaryCta.href}
-              className="group inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-wide uppercase rounded-lg border border-white/20 text-white hover:bg-white/5 hover:border-white/30 transition-all duration-200"
+              className="group inline-flex items-center gap-2 px-8 py-4 text-sm font-semibold tracking-wide uppercase rounded-lg border border-white/20 text-white hover:bg-white/5 hover:border-white/30 transition-all duration-200 w-full sm:w-auto"
             >
               {secondaryCta.label}
               <svg

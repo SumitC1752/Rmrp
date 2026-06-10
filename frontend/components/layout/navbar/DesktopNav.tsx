@@ -4,7 +4,8 @@ import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { m, AnimatePresence } from 'framer-motion';
-import type { NavItem, MegaMenuSection } from './types';
+import type { NavItem, MegaMenuItem, MegaMenuSection } from './types';
+import { ChevronDown } from 'lucide-react';
 
 const navItems: NavItem[] = [
   { label: 'Home', href: '/' },
@@ -21,7 +22,18 @@ const megaMenuSections: MegaMenuSection[] = [
     heading: 'Aluminum Products',
     items: [
       { title: 'Aluminum Ingots', href: '/products/aluminum-ingots', description: '99.5% & 99.7% purity, 6-8 kg bars' },
-      { title: 'Aluminum Scrap', href: '/products/aluminum-scrap', description: 'All ISRI grades — Tense, Zorba, Taint/Tabor' },
+      {
+        title: 'Aluminum Scrap',
+        href: '/products/aluminum-scrap',
+        description: 'All ISRI grades — Tense, Zorba, Taint/Tabor',
+        children: [
+          { title: 'Imported 6063 Aluminum Scrap', href: '/products/aluminum-scrap/imported-6063', description: 'Clean extrusion scrap, 6063 alloy, imported grade' },
+          { title: 'Soft Shiny Aluminum Wire Scrap', href: '/products/aluminum-scrap/soft-shiny-wire', description: 'Bright, clean aluminum wire scrap, high conductivity' },
+          { title: 'Centring 6061 Aluminum Scrap', href: '/products/aluminum-scrap/centring-6061', description: 'Machined 6061 centring scrap from automotive production' },
+          { title: 'Auto Parts Casting Scrap', href: '/products/aluminum-scrap/auto-parts-casting', description: 'Cast aluminum components from automotive manufacturing' },
+          { title: 'Local Aluminum Sections Scrap', href: '/products/aluminum-scrap/local-sections', description: 'Mixed aluminum profile sections from local fabrication' },
+        ],
+      },
     ],
   },
   {
@@ -168,6 +180,67 @@ function SimpleDropdown({ item, pathname, navLight }: { item: NavItem; pathname:
   );
 }
 
+function MegaMenuItemComponent({ item, pathname, onClose }: { item: MegaMenuItem; pathname: string; onClose: () => void }) {
+  const [expanded, setExpanded] = useState(false);
+  const hasChildren = item.children && item.children.length > 0;
+
+  return (
+    <li>
+      <div className="relative">
+        <Link
+          href={item.href}
+          className={`group block p-2 -mx-2 rounded-lg transition-colors duration-150 ${
+            isActive(pathname, item.href)
+              ? 'bg-gold-50/80'
+              : 'hover:bg-gray-50'
+          }`}
+          onClick={hasChildren ? (e) => { e.preventDefault(); setExpanded(!expanded); } : onClose}
+        >
+          <div className="flex items-center justify-between">
+            <span className="text-sm font-medium text-gray-900 group-hover:text-gold-700 transition-colors duration-150">
+              {item.title}
+            </span>
+            {hasChildren && (
+              <ChevronDown
+                className={`w-3.5 h-3.5 text-gray-400 transition-transform duration-200 ${
+                  expanded ? 'rotate-180' : ''
+                }`}
+              />
+            )}
+          </div>
+          <span className="block text-xs text-gray-500 mt-0.5 leading-snug">
+            {item.description}
+          </span>
+        </Link>
+        {hasChildren && expanded && (
+          <ul className="ml-3 mt-1 space-y-0.5 border-l-2 border-gold-200 pl-3">
+            {item.children!.map((child) => (
+              <li key={child.href}>
+                <Link
+                  href={child.href}
+                  className={`group block p-1.5 -mx-1.5 rounded-lg transition-colors duration-150 ${
+                    isActive(pathname, child.href)
+                      ? 'bg-gold-50/80'
+                      : 'hover:bg-gray-50'
+                  }`}
+                  onClick={onClose}
+                >
+                  <span className="block text-sm text-gray-700 group-hover:text-gold-700 transition-colors duration-150">
+                    {child.title}
+                  </span>
+                  <span className="block text-[11px] text-gray-400 mt-px leading-snug">
+                    {child.description}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </li>
+  );
+}
+
 function MegaMenu({ pathname, navLight }: { pathname: string; navLight?: boolean }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLLIElement>(null);
@@ -221,24 +294,12 @@ function MegaMenu({ pathname, navLight }: { pathname: string; navLight?: boolean
                   </h3>
                   <ul className="space-y-1.5">
                     {section.items.map((item) => (
-                      <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          className={`group block p-2 -mx-2 rounded-lg transition-colors duration-150 ${
-                            isActive(pathname, item.href)
-                              ? 'bg-gold-50/80'
-                              : 'hover:bg-gray-50'
-                          }`}
-                          onClick={() => setOpen(false)}
-                        >
-                          <span className="block text-sm font-medium text-gray-900 group-hover:text-gold-700 transition-colors duration-150">
-                            {item.title}
-                          </span>
-                          <span className="block text-xs text-gray-500 mt-0.5 leading-snug">
-                            {item.description}
-                          </span>
-                        </Link>
-                      </li>
+                      <MegaMenuItemComponent
+                        key={item.href}
+                        item={item}
+                        pathname={pathname}
+                        onClose={() => setOpen(false)}
+                      />
                     ))}
                   </ul>
                 </m.div>

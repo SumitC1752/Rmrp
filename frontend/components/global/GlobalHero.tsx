@@ -17,7 +17,7 @@ const fadeUp = {
 
 export default function GlobalHero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-navy-900 via-navy-800 to-navy-900 py-16 sm:py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-gradient-to-b from-navy-900 via-navy-800 to-navy-900 py-12 sm:py-16 lg:py-28">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(212,175,55,0.03)_0%,_transparent_60%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(212,175,55,0.02)_0%,_transparent_50%)]" />
       <m.div
@@ -44,10 +44,10 @@ export default function GlobalHero() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div>
-            <m.h1 variants={fadeUp} className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+            <m.h1 variants={fadeUp} className="text-[clamp(1.75rem,6vw,2.5rem)] sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
               Serving Global Markets from India
             </m.h1>
-            <m.p variants={fadeUp} className="mt-5 text-lg sm:text-xl text-gray-300/80 leading-relaxed">
+            <m.p variants={fadeUp} className="mt-5 text-[15px] sm:text-lg lg:text-xl text-gray-300/80 leading-relaxed">
               Exporting premium aluminum commodities, processed food ingredients, and agro commodities to 25+ countries across the Middle East, North America, Europe, and Asia with consistent quality and reliable logistics.
             </m.p>
             <m.div variants={fadeUp} className="mt-8 flex flex-wrap gap-3">

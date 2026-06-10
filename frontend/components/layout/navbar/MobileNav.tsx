@@ -1,12 +1,19 @@
 'use client';
 
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { m, AnimatePresence } from 'framer-motion';
 import { socialLinks } from '@/constants';
+import { ChevronDown } from 'lucide-react';
 import type { NavItem } from './types';
 import { navItems } from './DesktopNav';
+
+interface MobileLink {
+  label: string;
+  href: string;
+  children?: MobileLink[];
+}
 
 const mobileItemVariants = {
   hidden: { opacity: 0, x: -20 },
@@ -22,12 +29,22 @@ function isActive(pathname: string, href: string): boolean {
   return pathname.startsWith(href);
 }
 
-const productLinks = [
+const productLinks: { heading: string; links: MobileLink[] }[] = [
   {
     heading: 'Aluminum Products',
     links: [
       { label: 'Aluminum Ingots', href: '/products/aluminum-ingots' },
-      { label: 'Aluminum Scrap', href: '/products/aluminum-scrap' },
+      {
+        label: 'Aluminum Scrap',
+        href: '/products/aluminum-scrap',
+        children: [
+          { label: 'Imported 6063 Aluminum Scrap', href: '/products/aluminum-scrap/imported-6063' },
+          { label: 'Soft Shiny Aluminum Wire Scrap', href: '/products/aluminum-scrap/soft-shiny-wire' },
+          { label: 'Centring 6061 Aluminum Scrap', href: '/products/aluminum-scrap/centring-6061' },
+          { label: 'Auto Parts Casting Scrap', href: '/products/aluminum-scrap/auto-parts-casting' },
+          { label: 'Local Aluminum Sections Scrap', href: '/products/aluminum-scrap/local-sections' },
+        ],
+      },
     ],
   },
   {
@@ -53,6 +70,53 @@ const productLinks = [
     ],
   },
 ];
+
+function MobileNavLink({ link, pathname, onClose }: { link: MobileLink; pathname: string; onClose: () => void }) {
+  const [expanded, setExpanded] = useState(false);
+  const hasChildren = link.children && link.children.length > 0;
+
+  return (
+    <li>
+      <Link
+        href={link.href}
+        className={`flex items-center justify-between px-4 py-2 rounded-lg text-sm transition-colors duration-150 ${
+          isActive(pathname, link.href)
+            ? 'bg-gold-50/50 text-gold-600 font-medium'
+            : 'text-gray-600 hover:text-gold-600 hover:bg-gray-50'
+        }`}
+        onClick={hasChildren ? (e) => { e.preventDefault(); setExpanded(!expanded); } : onClose}
+      >
+        {link.label}
+        {hasChildren && (
+          <ChevronDown
+            className={`w-3.5 h-3.5 text-gray-400 transition-transform duration-200 ${
+              expanded ? 'rotate-180' : ''
+            }`}
+          />
+        )}
+      </Link>
+      {hasChildren && expanded && (
+        <ul className="ml-4 mt-1 space-y-0.5 border-l-2 border-gold-200 pl-3">
+          {link.children!.map((child) => (
+            <li key={child.href}>
+              <Link
+                href={child.href}
+                className={`block px-3 py-1.5 rounded-lg text-sm transition-colors duration-150 ${
+                  isActive(pathname, child.href)
+                    ? 'bg-gold-50/50 text-gold-600 font-medium'
+                    : 'text-gray-500 hover:text-gold-600 hover:bg-gray-50'
+                }`}
+                onClick={onClose}
+              >
+                {child.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </li>
+  );
+}
 
 interface MobileNavProps {
   open: boolean;
@@ -156,18 +220,12 @@ export default function MobileNav({ open, onClose }: MobileNavProps) {
                             </h4>
                             <ul className="space-y-0.5">
                               {section.links.map((link) => (
-                                <li key={link.href}>
-                                  <Link
-                                    href={link.href}
-                                    className={`block px-4 py-2 rounded-lg text-sm transition-colors duration-150 ${
-                                      isActive(pathname, link.href)
-                                        ? 'bg-gold-50/50 text-gold-600 font-medium'
-                                        : 'text-gray-600 hover:text-gold-600 hover:bg-gray-50'
-                                    }`}
-                                  >
-                                    {link.label}
-                                  </Link>
-                                </li>
+                                <MobileNavLink
+                                  key={link.href}
+                                  link={link}
+                                  pathname={pathname}
+                                  onClose={onClose}
+                                />
                               ))}
                             </ul>
                           </div>

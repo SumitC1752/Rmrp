@@ -9,6 +9,11 @@ export const IMAGES = {
   // ─── Aluminum Products ──────────────────────────────────
   aluminumIngots: '/images/aluminum-ingots.jpg',
   aluminumScrap: '/images/aluminum-scrap.jpg',
+  scrapImported6063: '/images/scrap-imported-6063.jpg',
+  scrapSoftShinyWire: '/images/scrap-soft-shiny-wire.jpg',
+  scrapCentring6061: '/images/scrap-centring-6061.jpg',
+  scrapAutoPartsCasting: '/images/scrap-auto-parts-casting.jpg',
+  scrapLocalSections: '/images/scrap-local-sections.jpg',
 
   // ─── Processed Food Products ────────────────────────────
   jaggery: '/images/jaggery.jpg',
